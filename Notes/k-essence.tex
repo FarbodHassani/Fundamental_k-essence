@@ -171,9 +171,12 @@ S_{\mathrm{DE}}=\int d^{4} x \sqrt{-g} P(-g^{00} \dot{\bar{\phi}}(t)^2, \bar{\ph
 \ee
 where $g^{00} = -1 + \delta g^{00} $. So we can write the Lagrangian as,
 \begin{align}
-P \Big( \dot{\bar{\phi}}(t)^2 (1 - \delta g^{00}), \bar{\phi}(t) \Big)  & = P( \bar{X}, \bar{\phi}(t)) -  \bar{X} \frac{\partial P} {\partial \bar{X}}\bigg|_{X=\bar{X}}  \delta g^{00}  +  \bar{X}^2\frac{\partial^2 P} {\partial \bar{X}^2}\bigg|_{X=\bar{X}}  ( \delta g^{00} )^2 \nonumber  \\ &  -   \bar{X}^3\frac{\partial^3 P} {\partial \bar{X}^3}\bigg|_{X=\bar{X}}  ( \delta g^{00} )^3 + \cdot \cdot \cdot
+P \Big( \dot{\bar{\phi}}(t)^2 (1 - \delta g^{00}), \bar{\phi}(t) \Big)  & = P( \bar{X}, \bar{\phi}(t)) -  \bar{X} \frac{\partial P} {\partial \bar{X}}\bigg|_{X=\bar{X}}  \delta g^{00}  + \frac{ \bar{X}^2}{2!}\frac{\partial^2 P} {\partial \bar{X}^2}\bigg|_{X=\bar{X}}  ( \delta g^{00} )^2 \nonumber  \\ &  -  \frac{ \bar{X}^3}{3!}\frac{\partial^3 P} {\partial \bar{X}^3}\bigg|_{X=\bar{X}}  ( \delta g^{00} )^3 + \cdot \cdot \cdot
 \end{align}
-where we have defined $\bar{X} =\dot{\bar{\phi}}(t)^2 $.
+where we have defined $\bar{X} =\dot{\bar{\phi}}(t)^2 $. As a result the action could be written in the following form:
+\be
+S=\int d^{4} x \sqrt{-g}\left[\frac{M_{\mathrm{Pl}}^{2}}{2} R-\Lambda(t)-c(t) g^{00}+\frac{M_{2}^{4}(t)}{2}\left(\delta g^{00}\right)^{2}  +\frac{M_{3}^{4}(t)}{3!}\left(\delta g^{00}\right)^{3} + \cdot \cdot \cdot  \right].
+\ee
 
 %We want to add the $k$-essence to the EFT action, i.e.~we want to include terms linear in $\delta K$, which is at least of order $\epsilon^0$. Since we are going to keep in the action all terms of order $\epsilon^2$ and since  $\delta g^{00}$ is at least of order $\epsilon$, then we need only to include $\delta K \delta g^{00}$ and $\delta K (\delta g^{00})^2$ because $\delta K (\delta g^{00})^n$ with $n>2$ will be higher order than ${\cal O}(\epsilon^2)$. in conclusion, the action is
 %\be
@@ -183,7 +186,7 @@ where we have defined $\bar{X} =\dot{\bar{\phi}}(t)^2 $.
 %  & - \frac{m_3^3(t)}{2}  \delta K \delta g^{00} - \frac{M_3^3(t)}{2} \delta K (\delta g^{00})^2 + ... \bigg] \;,
 %\end{split}
 %\ee
-
+\subsection{Stueckelberg trick}
 We want to make the scalar field perturbation explicit. We follow \cite{Hassani_2019} and perform  a diffeomorphism,  
 \be
 \label{time_diff}
@@ -210,6 +213,8 @@ For instance,
 f(t) & \to \tilde f(\tilde t) = f(t(\eta) + a(\eta) \pi(\eta ,\vec x)) \\ \nonumber & 
  = f(\eta)+f^{\prime}(\eta) \pi(\eta, \vec{x})+\frac{1}{2} \Big(f^{\prime \prime}(\eta)- \HH(\eta) f^{\prime}(\eta)  \Big) \pi(\eta,\vec x)^{2} + ...
 \end{align}
+
+
 On the other hand, since the geometric quantities $g^{00}$ and $\delta K$ are constructed based on the metric in conformal time (based on our notation), so in order to perform the transformation on the vector $A^{\mu}$ we have
 % Remember that although $\Lambda (t)$ quantities are expressed in terms of physical time. But our metric is defined (because of our definition) in terms of conformal time. That is why we have $g^{00}$ written in conformal time, so now we want to go from the conformal time to our new coordinate which is $\tilde t (\eta)$, i.e.,
 % $\eta \to \eta + a(\eta) \pi (\eta, \vec x)$
@@ -254,12 +259,6 @@ g^{\mu \nu} \rightarrow R_{\rho}^{\mu} R_{\sigma}^{\nu} g^{\rho \sigma}
 g_{\mu \nu} \rightarrow (R^{-1})^{\rho}_{\mu}(R^{-1})^{\sigma}_{\nu} g^{\rho \sigma}
 \end{equation}
 \begin{equation}
-\partial_{0} \rightarrow   (R^{-1})^{\rho}_{0}  \; \partial_{\rho} = \frac{1}{a (1+ \HH \pi + \pi')} \partial_{0}, 
-\end{equation}
-\begin{equation}
-\quad \partial_{i} \rightarrow  (R^{-1})^{\rho}_{i} \; \partial_{\rho}  = -\frac{ \partial_{i} \pi}{1+ \HH \pi + \pi')} \partial_{0}+\partial_{i}
-\end{equation}
-\begin{equation}
 g^{00} \rightarrow a^2 (1+ \HH \pi +  \pi')^2 g^{00}+2 a^2 (1+  \HH \pi +  \pi')  \partial_{\mu} \pi  g^{0 \mu}+ a(\eta)^2 g^{\mu \nu} \partial_{\mu} \pi \partial_{\nu} \pi
 \end{equation}
 \begin{equation}
@@ -268,6 +267,24 @@ g^{0i} \rightarrow a(1+\HH \pi + \pi') g^{0i}+a(\eta) \partial_{j} \pi  g^{i j}
 \begin{equation}
 g^{ij} \rightarrow g^{ij}
 \end{equation}
+\subsection{Action}
+The cpvariant action after the Stueckelberg trick reads,
+\be
+\label{EFTaction_cov}
+\begin{split}
+S=\int d^4 x \sqrt{-g} \bigg\{ & \frac{\MP^2}{2} R -  \Lambda \left[ t(\eta)+ a(\eta) \pi \right] - c \left[ t(\eta)+ a(\eta) \pi \right]  a^2(\eta)  \big[ (1+ \HH \pi + \pi')^2 g^{00} \\
+&+ 2 (1+\HH \pi + \pi') g^{0 \mu} \partial_\mu \pi + g^{\mu \nu} \partial_\mu \pi \partial_\nu \pi  \big]  +\frac{M_2^4 \left[ t(\eta)+ a(\eta) \pi \right]}{2}  \\
+& \times a^4 (\eta)  \big[ (1+ \HH \pi + \pi')^2 g^{00} + 2 (1+\HH \pi + \pi') g^{0 \mu} \partial_\mu \pi + g^{\mu \nu} \partial_\mu \pi \partial_\nu \pi  - \bar g^{00}\big]^2 
+\\ +\frac{M_3^4 \left[ t(\eta)+ a(\eta) \pi \right]}{3!}  
+& \times a^6 (\eta)  \big[ (1+ \HH \pi + \pi')^2 g^{00} + 2 (1+\HH \pi + \pi') g^{0 \mu} \partial_\mu \pi + g^{\mu \nu} \partial_\mu \pi \partial_\nu \pi  - \bar g^{00}\big]^3      \bigg\} \;,
+\end{split}
+\ee
+Here, we only focus on the last term in the EFT expansion, i.e.,
+\be
+\begin{split}
+S=\int d^4 x \sqrt{-g} \bigg\{ & \frac{M_3^4 \left[ t(\eta)+ a(\eta) \pi \right]}{3!}  \\ & \times a^6 (\eta)  \big[ (1+ \HH \pi + \pi')^2 g^{00} + 2 (1+\HH \pi + \pi') g^{0 \mu} \partial_\mu \pi + g^{\mu \nu} \partial_\mu \pi \partial_\nu \pi  - \bar g^{00}\big]^3      \bigg\} \;,
+\end{split}
+\ee
 
 %\begin{equation}
 %g_{00} \rightarrow \frac{g_{00}}{a^2 (1+\HH \pi + \pi')^2} 
